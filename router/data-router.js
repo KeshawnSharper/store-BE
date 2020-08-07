@@ -11,9 +11,9 @@ const multer = require("multer")
 // router.use(bodyParser.json());
 
 router.post('/register', (req, res) => {
+  console.log(req.body)
   let user = req.body
   let hash = bcrypt.hashSync(user.password,13)
-  user.online = false
   user.password = hash 
   data.register(user)
   .then(project => {
