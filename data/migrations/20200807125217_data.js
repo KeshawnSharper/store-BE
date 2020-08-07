@@ -15,10 +15,10 @@ exports.up = function(knex) {
         table.string("product_id",128).notNullable();
         table.string("price",128).notNullable();
         table.string("email",128).notNullable().unique()
-          table.string("street",255)
-          table.string("city",255)
-          table.string("country",255)
-          table.boolean("delivered",128)
+        table.string("street",255)
+        table.string("city",255)
+        table.string("country",255)
+        table.boolean("delivered",128)
         table.date("date_ordered")
         table.date("date_arrived")
         
