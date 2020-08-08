@@ -31,14 +31,14 @@ router.post('/login', (req, res) => {
   .then(user => {
     const payload = {
       userid:user.id,
-      username:user.first_name
+      username:user.username
     }
     const options = {
       expiresIn:"1d"
     }
     const token = jwt.sign(payload,"secret",options)
     if (user && bcrypt.compareSync(body.password,user.password))
-    {res.status(201).json({ id:user.id,name:user.first_name + " " + user.last_name,picture:user.picture,token:token})}
+    {res.status(200).json({email:body.email,token:token,userid:user.id,first_name:user.first_name,last_name:user.last_name})}
    else {
      res.status(404).json({message:`invalid creditinials`})
    }

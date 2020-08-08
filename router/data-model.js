@@ -16,7 +16,8 @@ function register(user){
   }
   function login(user)
  { 
-     return db("users").where({"email":user.email})
+  console.log(db("users"))
+     return db("users").where({"email":"keshawnsharper35@gmail.com"})
  }
  function purchase(order){
   return db("orders").insert(order)
