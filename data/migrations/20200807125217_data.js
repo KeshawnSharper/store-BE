@@ -17,7 +17,7 @@ exports.up = function(knex) {
         .onUpdate("CASCADE")
         table.string("product_id",128).notNullable();
         table.string("price",128).notNullable();
-        table.string("email",128).notNullable().unique()
+        table.string("email",128).notNullable()
         table.string("street",255)
         table.string("city",255)
         table.string("country",255)

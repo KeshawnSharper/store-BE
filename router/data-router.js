@@ -60,6 +60,7 @@ router.get('/users', (req, res) => {
 router.post('/orders', (req, res) => {
   var today = new Date();
   req.body.delivered = false
+  console.log(req.body)
   data.purchase(req.body)
   .then(project => {
     res.status(201).json(project)
