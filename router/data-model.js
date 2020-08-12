@@ -21,8 +21,8 @@ function register(user){
  function purchase(order){
   return db("orders").insert(order)
 }
-function getOrders(){
-  return db("orders")
+function getOrders(order){
+  return db("orders").where({"user_id":order})
 }
 module.exports = {
   

@@ -73,10 +73,9 @@ router.post('/orders', (req, res) => {
     res.status(500).json({ message: 'Failed to get schemes' });
   });
 })
-router.get('/orders', (req, res) => {
-  var today = new Date();
-  req.body.delivered = false
-  data.getOrders()
+router.get('/orders/:id', (req, res) => {
+  console.log(req.params.id)
+  data.getOrders(req.params.id)
   .then(project => {
     res.status(200).json(project)
   })
