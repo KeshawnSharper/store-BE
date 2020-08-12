@@ -1,7 +1,7 @@
 const express = require('express');
 
 const data = require('./data-model')
-const stripe = require("stripe")("sk_test_51HF9J6FriexrfnPA74CdV2Xrps7HzN7goZPONlSKSPMru1VUgcEDSj56LZVGcKZaxIyhOzzmSl7xJ44xdNHNFduE005cJaQTXm");
+const stripe = require("stripe")("sk_test_NoFhpUlZ3MLrBsMFOmVdsnXW00wxvpx0eU");
 const router = express.Router();
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
@@ -28,9 +28,11 @@ res.status(500).json({ message: 'Failed to get schemes' })
 })
 router.post('/login', (req, res) => {
   let body = req.body
+  console.log(body)
   data.login(body)
   .first()
   .then(user => {
+    console.log(user)
     const payload = {
       userid:user.id,
       username:user.username
