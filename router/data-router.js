@@ -1,7 +1,7 @@
 const express = require('express');
 
 const data = require('./data-model')
-const stripe = require("stripe")("sk_test_NoFhpUlZ3MLrBsMFOmVdsnXW00wxvpx0eU");
+const stripe = require("stripe")("sk_test_51GmhlnFRrEOe5mtdUXFx3pRk9x3clCyRjKAtwqgxXa2ePzyN2oZ7AfcvgCc8NSOxaxs6QinM87MR0g6F8QT6BRlP00NUpNHIlt");
 const router = express.Router();
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
